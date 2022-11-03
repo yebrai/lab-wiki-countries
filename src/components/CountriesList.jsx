@@ -14,7 +14,7 @@ function CountriesList(props) {
               {props.countriesList.map((eachCountry) => {
                 //console.log(eachCountry)
                 return (
-                  <div className="col-5" style={{maxHeight: "90vh", overflow: "scroll"}}
+                  <div className="col-6 " style={{maxHeight: "90vh", overflow: "scroll", width:"100%"}}
                   key={eachCountry.alpha3Code}>
                   <div className="list-group">
                     <Link

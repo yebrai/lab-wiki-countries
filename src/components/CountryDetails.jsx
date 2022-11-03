@@ -35,13 +35,17 @@ function CountryDetails(props) {
             <td>
               <ul>
                 {filteredCountry[0].borders.map((eachBorder, index) => {
+                    console.log(eachBorder)
                   return (
                     <Link
                       className="list-group-item list-group-item-action"
                       to={`/${eachBorder}`}
                       key={index}
+                      style={{color:"blue"}}
                     >
-                      {eachBorder}
+                      {countriesList.map((eachCountry) => {
+                        return eachCountry.alpha3Code === eachBorder && eachCountry.name.common
+                      })}
                     </Link>
                   );
                 })}
