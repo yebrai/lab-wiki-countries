@@ -20,7 +20,7 @@ function App() {
     axios
       .get('https://ih-countries-api.herokuapp.com/countries')
       .then((response) => {
-      //  console.log(response.data);
+        //  console.log(response.data);
         setCountriesList(response.data);
         setIsFetching(false);
       })
@@ -34,13 +34,13 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className="container" >
-        <div className="d-flex" >
-          <CountriesList countriesList={countriesList}/>
+      <div className="container">
+        <div className="d-flex">
+          <CountriesList countriesList={countriesList} />
           <Routes>
             <Route
               path="/:id"
-              element={<CountryDetails countriesList={countriesList}/>}
+              element={<CountryDetails countriesList={countriesList} />}
             />
           </Routes>
         </div>

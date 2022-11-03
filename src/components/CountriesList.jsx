@@ -14,21 +14,28 @@ function CountriesList(props) {
               {props.countriesList.map((eachCountry) => {
                 //console.log(eachCountry)
                 return (
-                  <div className="col-6 " style={{maxHeight: "90vh", overflow: "scroll", width:"100%"}}
-                  key={eachCountry.alpha3Code}>
-                  <div className="list-group">
-                    <Link
-                      to={`/${eachCountry.alpha3Code}`}
-                      className="list-group-item list-group-item-action"
-                    >
-                      <img
-                        src={`https://flagpedia.net/data/flags/icon/72x54/${eachCountry.alpha2Code.toLowerCase()}.png`}
-                        alt=""
-                        width="20px"
-                      />
-                      {eachCountry.name.official}
-                    </Link>
-                  </div>
+                  <div
+                    className="col-6 "
+                    style={{
+                      maxHeight: '90vh',
+                      overflow: 'scroll',
+                      width: '100%',
+                    }}
+                    key={eachCountry.alpha3Code}
+                  >
+                    <div className="list-group">
+                      <Link
+                        to={`/${eachCountry.alpha3Code}`}
+                        className="list-group-item list-group-item-action"
+                      >
+                        <img
+                          src={`https://flagpedia.net/data/flags/icon/72x54/${eachCountry.alpha2Code.toLowerCase()}.png`}
+                          alt=""
+                          width="20px"
+                        />
+                        {eachCountry.name.official}
+                      </Link>
+                    </div>
                   </div>
                 );
               })}

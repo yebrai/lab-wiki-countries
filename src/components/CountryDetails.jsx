@@ -26,7 +26,8 @@ function CountryDetails(props) {
           </tr>
           <tr>
             <td>Area</td>
-            <td>{filteredCountry[0].area} km
+            <td>
+              {filteredCountry[0].area} km
               <sup>2</sup>
             </td>
           </tr>
@@ -35,16 +36,19 @@ function CountryDetails(props) {
             <td>
               <ul>
                 {filteredCountry[0].borders.map((eachBorder, index) => {
-                    console.log(eachBorder)
+                  console.log(eachBorder);
                   return (
                     <Link
                       className="list-group-item list-group-item-action"
                       to={`/${eachBorder}`}
                       key={index}
-                      style={{color:"blue"}}
+                      style={{ color: 'blue' }}
                     >
                       {countriesList.map((eachCountry) => {
-                        return eachCountry.alpha3Code === eachBorder && eachCountry.name.common
+                        return (
+                          eachCountry.alpha3Code === eachBorder &&
+                          eachCountry.name.common
+                        );
                       })}
                     </Link>
                   );
