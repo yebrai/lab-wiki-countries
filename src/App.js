@@ -15,13 +15,18 @@ function App() {
 
   //With API
 
+
+
   useEffect(() => {
     setIsFetching(true);
     axios
       .get('https://ih-countries-api.herokuapp.com/countries')
       .then((response) => {
         //  console.log(response.data);
-        setCountriesList(response.data);
+        //Sorting data before render - extra
+        setCountriesList(response.data.sort((elem1, elem2) => {
+          return elem1.name.official > elem2.name.official ? 1 : -1
+        }));
         setIsFetching(false);
       })
       .catch((err) => console.log('Some wrong', err));
